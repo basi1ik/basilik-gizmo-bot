@@ -3,6 +3,17 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const TOKEN = process.env.TOKEN;
 
+const http = require('http');
+http.createServer((req, res) => {
+res.writeHead(200, {
+    'Content-type': 'text/plain'
+});
+    res.write('Hey');
+    res.end();
+}).listen(4000);
+
+
+
 bot.login(TOKEN);
 
 bot.on('ready', () => {
